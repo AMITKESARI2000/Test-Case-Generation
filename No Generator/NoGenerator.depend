@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1599939692 source:c:\users\amit_kesari\desktop\nogenerator\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<fstream>
+	<math.h>
+

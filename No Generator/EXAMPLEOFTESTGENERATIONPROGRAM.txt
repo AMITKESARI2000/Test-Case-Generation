@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+    ifstream fin ;
+    fin.open ("testin.txt", ios::in );//| ios::app
+    ofstream fout ;
+    fout.open ("testout.txt", ios::out );//| ios::app
+    int n;
+	fin >> n;
+	vector<int> v(n), temp(n);
+	for (int i = 0;i < n;i++) {
+		fin >> v[i];
+		temp[i] = v[i];
+	}
+
+	sort(temp.begin(), temp.end());
+	map<int, int> red;
+	int rank = 1;
+	for (int i = 0;i < n;i++) {
+		red[temp[i]] = rank++;
+	}
+	
+	for (int i = 0;i < n;i++) {
+		//cout << red[v[i]] << " ";
+		fout << red[v[i]] << " ";
+	}
+
+    fin.close();
+    fout.close();
+
+}

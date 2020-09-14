@@ -1,0 +1,48 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>    //For seeding rand function with time
+#include <fstream>   //For file handling
+#define ll long long
+using namespace std;
+
+int main() {
+    srand(time(NULL));
+    ll value=0;
+    ofstream fout ;
+    fout.open ("TestCaseGen.txt", ios::out );//| ios::app  //Open the notepad file for writing in it
+
+    if (fout.is_open()) {
+        ll test=100;    //No of test Cases you want to generate
+        fout<<test<<endl;  //Printing in file
+        while(test--) {
+            ll n=1+rand()%500;  //Random length of string
+            string s[n];
+
+            for (ll i = 0; i < n; ++i) {
+                s[i]=97+rand()%26;   //Random character of string
+                fout << s[i];  //Output in file
+            }
+            fout<<endl;
+        }
+        fout.close();
+        cout<<"Random numbers generated into the file"<<endl;  //Logging on screen
+
+    } else
+        cout << "Unable to open file";
+
+    /*
+        ifstream fin ;
+        fin.open ("TestCaseGen.txt", ios::in );//| ios::app
+        if (fin.is_open()){
+            while(!fin.eof()){
+                fin>>value;
+                cout<<value<<" ";
+            }
+            fin.close();
+            cout<<"Numbers taken from the file"<<endl;
+        }
+        else
+            cout << "Unable to open file";
+    */
+}
