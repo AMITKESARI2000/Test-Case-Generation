@@ -17,17 +17,21 @@ int main() {
     fout.open ("TestCaseGen.txt", ios::out );//| ios::app
 
     if (fout.is_open()) {
-        ll test=100;
-        fout<<test<<endl;
+        ll test=10000;
+        //fout<<test<<endl;
+        test=1;
         while(test--) {
-            ll n=1+rand()%500;
-            string s[n];
-
-            for (ll i = 0; i < n; ++i) {
-                s[i]=97+rand()%26;
-                fout << s[i];
+            ll n1=1+rand()%500;
+            n1=350;
+            fout<<n1<<endl;
+            for(int i=0;i<n1;i++){
+                ll tmp=1+rand()%10000;
+                fout<<tmp<<"  ";
             }
-            fout<<endl;
+            ll t=1+rand()%1000;
+            t=1000;
+            fout<<endl<<t<<endl;
+
         }
         fout.close();
         cout<<"Random numbers generated into the file"<<endl;
