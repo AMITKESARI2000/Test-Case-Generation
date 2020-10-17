@@ -4,6 +4,8 @@
 #include <time.h>
 #include <fstream>
 #include <math.h>
+#include <random>
+#include <chrono>
 #define ll long long
 using namespace std;
 
@@ -12,31 +14,34 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     srand(time(NULL));
-    ll value=0;
-    ofstream fout ;
-    fout.open ("TestCaseGen.txt", ios::out );//| ios::app
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+    mt19937_64 rng(seed);//rand() limit is only 32767, use mt19937 for larger and better random numbers [0,n)
+    ll value = 0;
+    ofstream fout;
+    fout.open("TestCaseGen.txt", ios::out);//| ios::app
 
     if (fout.is_open()) {
-        ll test=10000;
-        //fout<<test<<endl;
-        test=1;
-        while(test--) {
-            ll n1=1+rand()%500;
-            n1=350;
-            fout<<n1<<endl;
-            for(int i=0;i<n1;i++){
-                ll tmp=1+rand()%10000;
-                fout<<tmp<<"  ";
-            }
-            ll t=1+rand()%1000;
-            t=1000;
-            fout<<endl<<t<<endl;
+        ll test = 1000;
+        fout << test << endl;
+        while (test--) {
+            ll n = 10;
+            //ll n1=1+(((rand()*rand())%n)*rand())%n;
+            cout << 1+rng() << endl;
+
+            /*
+             for(int i=0;i<n1;i++){
+                 ll tmp=1+rand()%10000;
+                 fout<<tmp<<"  ";
+             }
+             */
+
 
         }
         fout.close();
-        cout<<"Random numbers generated into the file"<<endl;
+        cout << "Random numbers generated into the file" << endl;
 
-    } else
+    }
+    else
         cout << "Unable to open file";
 
     /*
