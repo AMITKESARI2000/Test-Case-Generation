@@ -124,3 +124,5 @@ Codes:
         cout << "Unable to open file";
 }
 </code>
+
+UPDATE: For using mt19937 your compiler must be C++11 or above.
