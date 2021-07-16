@@ -3,57 +3,65 @@
 <h1><a href="https://docs.google.com/document/d/1AWGXQz_KbrqVKnBn61HwERt3_f3SOa9gem8Lrs6Fk-M/edit?usp=sharing">GENERATION OF TEST CASES Drive File</a></h1>
 
 
-<h2>Digital Wizards</h2>
-<b>GENERATION OF TEST CASES </b>
+## Digital Wizards
+**GENERATION OF TEST CASES FOR HACKERRANK**
 
 Steps:
-<ul>
-  <li>
-I will be taking example of a question which has a input of type :
 
-No. of Test Cases
-String 
-String
-String
-…
-</li>
-<li>
-Create a Number Generator program in C++ by using the code given below as reference.
+- I will be taking example of a question which has a input of type :
+
+> No. of Test Cases   
+String    
+String   
+String   
+    ...  
+    ...    
+For example:    
+    4      
+    abcd      
+    abcdefgh        
+    ...        
+    ...     
+  
+
+- Create a Random Number Generator program in C++ by using the Test Case Generator code given below as reference (also in repo folder). You just have to modify the code according to the kind of test case format that you want to generate.
+  -![image](https://user-images.githubusercontent.com/66141447/126000457-2a0aab2e-d4cb-4aaf-913a-37ea9dbbe3f9.png)
+   
 
         (Code given in last too, for copy pasting)
-  </li>
-  <li>
-A file named TestCaseGen.txt will be generated in your folder. Open it to check the random test case generated.
-</li>
-<li>
-Now, Create the solution of the question you are solving and check if it is working correctly.
-  </li>
-  <li>
-Create a file named testin.txt in the folder containing the solution program. The solution program will take input from this file so take care of working in same directory.
-  </li>
-  <li>
-Copy the text from the TestCaseGen.txt and paste it into testin.txt .
-  </li>
-  <li>
-Change your solution program to take input from testin.txt file and output to testout.txt file. Refer to sample below.
 
-(Code given in last too, for copy pasting)
-</li>
-<li>
-Open HackerRank. Open Test Case tab. Add Test Case. Select upload. Upload the testin.txt file and the testout.txt file respectively. Done!
-  </li>
-  <li>
-After adding 2 3 test cases, check whether the test cases are passing correctly by submitting your original solution to Hackerrank.
-  </li>
-</ul>
+- A file named `TestCaseGen.txt` will be generated in your folder. Open it to check the random test case generated.
 
-Note:
-v1 = rand() % 100;         // v1 in the range 0 to 99 <br>
-v2 = rand() % 100 + 1;     // v2 in the range 1 to 100 <br>
-v3 = rand() % 30 + 1985;   // v3 in the range 1985-2014 <br>
+- Now, create the solution of the question you are solving and check if it is working correctly.
+ 
+- Create a file named `testin.txt` in the folder containing the solution program. The solution program will take input from this file so take care of working in same directory.
+  
+- Copy the text from the `TestCaseGen.txt` and paste it into `testin.txt`.
+ 
+- Change your solution program to take input from `testin.txt` file and output to `testout.txt` file. Refer to sample below.
+  - ![image](https://user-images.githubusercontent.com/66141447/126000525-30718f28-41b6-4970-b572-f71ab916475b.png)
 
-Codes:
-<code>
+
+      (Code given in last too, for copy pasting)
+
+- Open HackerRank. Open Test Case tab. Add Test Case. Select upload. Upload the `testin.txt` file and the `testout.txt` file respectively. Done!
+ 
+- After adding 2 3 test cases, check whether the test cases are passing correctly by submitting your original solution to Hackerrank.
+ 
+
+--- 
+
+#### Ranges :
+v1 = rand() % 100;          **// v1 in the range 0 to 99**   
+v2 = rand() % 100 + 1;         **// v2 in the range 1 to 100**       
+v3 = rand() % 30 + 1985;        **// v3 in the range 1985-2014**    
+
+---
+ 
+## Codes:
+
+### Test Case Generator program:
+```
   
         //Test Case Generator
         #include <iostream>
@@ -87,8 +95,10 @@ Codes:
                   } else
                       cout << "Unable to open file";
               }
-</code>
-<code>
+```
+
+### Runner Program:
+```
   
     //Runner Program
     #include<bits/stdc++.h>
@@ -123,6 +133,6 @@ Codes:
     } else
         cout << "Unable to open file";
 }
-</code>
+```
 
-UPDATE: For using mt19937 your compiler must be C++11 or above.
+#### UPDATE: For using mt19937 your compiler must be C++11 or above.
